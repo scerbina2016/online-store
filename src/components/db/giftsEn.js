@@ -1,6 +1,12 @@
 const birdsData = [
-{"products":
-[{id:1,title:"iPhone 9",description:"An apple mobile which is nothing like apple","price":549,"discountPercentage":12.96,"rating":4.69,"stock":94,"brand":"Apple","category":"smartphones","thumbnail":"https://i.dummyjson.com/data/products/1/thumbnail.jpg","images":["https://i.dummyjson.com/data/products/1/1.jpg","https://i.dummyjson.com/data/products/1/2.jpg","https://i.dummyjson.com/data/products/1/3.jpg","https://i.dummyjson.com/data/products/1/4.jpg","https://i.dummyjson.com/data/products/1/thumbnail.jpg"]},
+
+{   id:1,
+    title:"iPhone 9",
+    description:"An apple mobile which is nothing like apple",
+    "price":549,
+    "discountPercentage":12.96,
+    "rating":4.69,"stock":94,
+    "brand":"Apple","category":"smartphones","thumbnail":"https://i.dummyjson.com/data/products/1/thumbnail.jpg","images":["https://i.dummyjson.com/data/products/1/1.jpg","https://i.dummyjson.com/data/products/1/2.jpg","https://i.dummyjson.com/data/products/1/3.jpg","https://i.dummyjson.com/data/products/1/4.jpg","https://i.dummyjson.com/data/products/1/thumbnail.jpg"]},
 
 {"id":2,"title":"iPhone X","description":"SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...","price":899,"discountPercentage":17.94,"rating":4.44,"stock":34,"brand":"Apple","category":"smartphones","thumbnail":"https://i.dummyjson.com/data/products/2/thumbnail.jpg","images":["https://i.dummyjson.com/data/products/2/1.jpg","https://i.dummyjson.com/data/products/2/2.jpg","https://i.dummyjson.com/data/products/2/3.jpg","https://i.dummyjson.com/data/products/2/thumbnail.jpg"]},
 
@@ -141,6 +147,8 @@ const birdsData = [
 
 {"id":99,"title":"American Vintage Wood Pendant Light","description":"American Vintage Wood Pendant Light Farmhouse Antique Hanging Lamp Lampara Colgante","price":46,"discountPercentage":8.84,"rating":4.32,"stock":138,"brand":"Ifei Home","category":"lighting","thumbnail":"https://i.dummyjson.com/data/products/99/thumbnail.jpg","images":["https://i.dummyjson.com/data/products/99/1.jpg","https://i.dummyjson.com/data/products/99/2.jpg","https://i.dummyjson.com/data/products/99/3.jpg","https://i.dummyjson.com/data/products/99/4.jpg","https://i.dummyjson.com/data/products/99/thumbnail.jpg"]},
 
-{"id":100,"title":"Crystal chandelier maria theresa for 12 light","description":"Crystal chandelier maria theresa for 12 light","price":47,"discountPercentage":16,"rating":4.74,"stock":133,"brand":"YIOSI","category":"lighting","thumbnail":"https://i.dummyjson.com/data/products/100/thumbnail.jpg","images":["https://i.dummyjson.com/data/products/100/1.jpg","https://i.dummyjson.com/data/products/100/2.jpg","https://i.dummyjson.com/data/products/100/3.jpg","https://i.dummyjson.com/data/products/100/thumbnail.jpg"]}],"total":100,"skip":0,"limit":100}
+{"id":100,"title":"Crystal chandelier maria theresa for 12 light","description":"Crystal chandelier maria theresa for 12 light","price":47,"discountPercentage":16,"rating":4.74,"stock":133,"brand":"YIOSI","category":"lighting","thumbnail":"https://i.dummyjson.com/data/products/100/thumbnail.jpg","images":["https://i.dummyjson.com/data/products/100/1.jpg","https://i.dummyjson.com/data/products/100/2.jpg","https://i.dummyjson.com/data/products/100/3.jpg","https://i.dummyjson.com/data/products/100/thumbnail.jpg"]}
+]
 
-];
+
+
