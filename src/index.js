@@ -11,7 +11,7 @@ request.onload = function() {
   }
   console.log(gifts);*/
 
-  fetch('./components/db/giftsEn.json',
+  fetch('https://scerbina2016.github.io/online-store/src/components/db/giftsEn.json',
   {
     method: 'GET',
     //mode: 'no cors'
