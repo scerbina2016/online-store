@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&display=swap');
+:root{box-sizing: border-box;
+    font-family: 'Oleo Script', cursive;
+    margin: 0px;
+    padding: 0px;
+    
+    }
+
+    *,
+    ::before,
+    ::after{box-sizing: inherit;}
+
+   /* #header-container{
+        text-decoration: underline;
+        color: red;
+
+    }*/
+
+    .qwe{
+        grid-template-rows: 50px 50px 50px;
+        grid-column: 2/4;
+        grid-row: 2/3;
+        border: 1px solid #0073ff;
+        font-size: 10vmax;
+    }
+    
