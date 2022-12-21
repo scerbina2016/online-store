@@ -10,17 +10,29 @@
     ::before,
     ::after{box-sizing: inherit;}
 
-   /* #header-container{
+    /*#header-container{
         text-decoration: underline;
         color: red;
 
     }*/
 
-    .qwe{
+    /*.qwe{
         grid-template-rows: 50px 50px 50px;
         grid-column: 2/4;
         grid-row: 2/3;
-        border: 1px solid #0073ff;
+        border: 1px solid #06560b;
         font-size: 10vmax;
+    }*/
+
+    .head-naw,
+    .head-cart{
+        text-decoration:none;
+        color:rgb(6, 86, 11);
+    }
+
+    .head-naw:hover {
+        cursor:pointer;
+        text-decoration: underline;
+       
     }
     

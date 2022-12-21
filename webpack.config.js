@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require("copy-webpack-plugin");
 require('webpack');
 const path = require('path');
 
@@ -14,6 +15,11 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
   },
+  resolve: {
+    alias: {
+      images: path.resolve(__dirname, 'src/components/images'),
+    },
+  },
   module: {
     rules: [
       { test: /\.txt$/, use: 'raw-loader' },
@@ -21,6 +27,10 @@ module.exports = {
           test: /\.tsx?$/,
           use: 'ts-loader',
           exclude: /node_modules/
+      },
+      {
+        test: /\.(png|jpg|jpeg|svg|gif)$/,
+        use: ['file-loader'],
       },
       {
         test: /\.css$/i,
@@ -37,7 +47,18 @@ module.exports = {
   plugins: [new HtmlWebpackPlugin({ 
     title: "GS_1C",
     template: './src/index.html',
-    scriptLoading: "blocking"})],
+    scriptLoading: "blocking"}),
+    new CopyPlugin({
+      patterns: [
+        { from: './src/components/images', to: './images' },
+        
+      ],
+    }),
+  
+  ],
+
+
+    
   resolve: {
     extensions: [ ".tsx", ".ts", ".js" ,".css"]
   },
