@@ -1,5 +1,5 @@
 function makeMiddleBanner (className:string,id:string,text:string,
-                           colorName:string,fontSize: string,width:string,height:string):void{
+                           colorName:string,fontSize: string,width:string,height:string,borderRadius:string):void{
     const banner = document.createElement('section');
     const bodyInner = document.getElementsByTagName('header');
     banner.className = className;
@@ -17,6 +17,7 @@ function makeMiddleBanner (className:string,id:string,text:string,
     banner.style.borderWidth = '0.5vh';
     banner.style.marginTop = '0.5vh';
     banner.style.paddingTop = '1vh'; // TODO make to center
+    banner.style.borderRadius = borderRadius;
     document.getElementById(bodyInner[0].id)?.insertAdjacentElement('afterend', banner);
     //const bannerId = document.getElementById(id);
     //console.log('elem id ==>>' + bannerId?.id);

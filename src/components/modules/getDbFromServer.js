@@ -1,5 +1,5 @@
 
-export function getDbFromServer(linkDb)
+function getDbFromServer (linkDb) {
 fetch(linkDb,
   {
     method: 'GET',
@@ -12,5 +12,5 @@ fetch(linkDb,
     console.log(data);
     return data;
   });
-
-  // export default getDbFromServer();
+}
+  export default getDbFromServer;
