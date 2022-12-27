@@ -2,7 +2,7 @@ import { StringChain } from "lodash";
 
 function choicePanelIns (name:string,nameNeed:string,className:string, id:string, inBlockClass:string,
     colorName:string, fontSize: string, width:string, height:string, borderColor:string,
-    borderWidth:string, borderRadius:string,flexDir:string, overflow:string):void{
+    borderWidth:string, borderRadius:string,display:string,flexDir:string, flexWrap:string, overflow:string):void{
         const bodyInner:HTMLCollectionOf<Element> = document.getElementsByClassName(inBlockClass);
         if(nameNeed === 'need'){
         const nameField:HTMLElement = document.createElement('p');
@@ -21,7 +21,8 @@ function choicePanelIns (name:string,nameNeed:string,className:string, id:string
         mainField.style.fontSize = fontSize;
         mainField.style.width = width;
         mainField.style.height = height;
-        mainField.style.display ='flex';
+        mainField.style.display =display;
+        mainField.style.flexWrap = flexWrap;
         mainField.style.flexDirection = flexDir;
         mainField.style.borderColor = borderColor;
         mainField.style.borderWidth = borderWidth;
@@ -33,6 +34,7 @@ function choicePanelIns (name:string,nameNeed:string,className:string, id:string
         mainField.style.marginBottom = '0.5vh';
         mainField.style.overflowY = overflow;
         mainField.style.padding = 'auto';
+        mainField.style.justifyContent = 'space-around';
         document.getElementById(bodyInner[0].id)?.insertAdjacentElement('beforeend', mainField);
     }
     

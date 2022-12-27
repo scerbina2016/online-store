@@ -17,7 +17,7 @@ request.onload = function() {
   }
   console.log(gifts);*/
 //const giftsDb = getDbFromServer('https://scerbina2016.github.io/online-store/src/components/db/giftsEn.json');
-  fetch('https://scerbina2016.github.io/online-store/src/components/db/giftsEn.json',
+  /*fetch('https://scerbina2016.github.io/online-store/src/components/db/giftsEn.json',
   {
     method: 'GET',
     mode: 'cors'
@@ -31,4 +31,4 @@ request.onload = function() {
 
   //console.log(giftsDb);
 
-  console.log(`It's working ======================`);
+  console.log(`It's working ======================`);*/
