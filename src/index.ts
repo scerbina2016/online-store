@@ -57,9 +57,6 @@ choicePanelIns('','dont','gifts-top','gifts-serch-rest','main-field-gifts','#065
 
 listMakers(arrExp, categoryList,serchCategory,'category-list','category-list','main-field-category','#08300a','3vh',4);
 listMakers(arrExp,brandList,serchBrand,'brand-list','brand-list','main-field-brand','#08300a','3vh',29);
-
-
-
 fillGifts(arrExp,'gift-container','gift-id','main-field-gifts','#08300a','1.8vw','23%','25vw','#06560b','0.5vh','2vh','column','none')
 
 } // asinc function end
