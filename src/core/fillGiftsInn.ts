@@ -1,7 +1,7 @@
 import giftContainerHTML from "../components/modules/giftContainerHTML";
 import Gifts from "../components/modules/interfaces";
 import addToCart from "./addToCart";
-function fillGifts (giftsData:Gifts[],className:string, id:string, inBlockClass:string,
+function fillGiftsInn (giftsData:Gifts[],className:string, id:string, inBlockClass:string,
     colorName:string, fontSize: string, width:string, height:string, borderColor:string,
     borderWidth:string, borderRadius:string,flexDir:string, overflow:string):void{
         const bodyInner:HTMLCollectionOf<Element> = document.getElementsByClassName(inBlockClass);
@@ -138,7 +138,7 @@ function fillGifts (giftsData:Gifts[],className:string, id:string, inBlockClass:
      }
     }
     
-    export default fillGifts;
+    export default fillGiftsInn;
 
    let a = `  <div class="gift-container-in" id="gift-in-name"></div>
                                    <div class="gift-container-in" id="gift-in-img"></div>
