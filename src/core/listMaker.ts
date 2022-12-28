@@ -7,9 +7,9 @@ function listMakers (arrExp:Gifts[], fromArr:string[],toArr:string[],className:s
         const bodyInner:HTMLCollectionOf<Element> = document.getElementsByClassName(inBlockClass);
         for(let i=0;i<adder;i++){
         const mainFieldFirst:HTMLElement = document.createElement('div');
-        mainFieldFirst.innerHTML = `<p>${i}</p>`
+        mainFieldFirst.innerHTML = `<p style="height:2vw"></p>`
         document.getElementById(bodyInner[0].id)?.insertAdjacentElement('beforeend', mainFieldFirst);
-        }
+        } 
       for (let i = 0; i < fromArr.length; i ++){
         const mainField:HTMLElement = document.createElement('div');  
         mainField.className = className;
@@ -83,6 +83,11 @@ function listMakers (arrExp:Gifts[], fromArr:string[],toArr:string[],className:s
     })
 
     }
+
+
+    
+
+
     return toArr;
     }
     

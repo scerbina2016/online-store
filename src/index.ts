@@ -49,14 +49,14 @@ headerNav('head-naw','head-container','#06560b',5,2,'3vh','About as','Free sale'
 cartHead('head-cart','head-cart-top','#06560b',9,2,'5vh','Cart');
 makeMiddleBanner('main-banner','main-banner-top','Buy And Be Happy','#06560b','7vh','98vw','14vh','2vh');
 makeMainField('main-field','main-container','main-banner','red','3vh','98vw');
-choicePanelIns('','dont','main-field-choice','main-choice','main-field','#06560b','3vh','50vh','100vh','#06560b','0.5vh','2vh','flex','column','nowrap','none');
-choicePanelIns('Category','need','main-field-category','choice-category','main-field-choice','#06560b','3vh','48vh','50%','#06560b','0.5vh','1vh','flex','column','nowrap','auto');
-choicePanelIns('Brand','need','main-field-brand','choice-brand','main-field-choice','#06560b','3vh','48vh','50%','#06560b','0.5vh','1vh','flex','column','nowrap','auto');
+choicePanelIns('','dont','main-field-choice','main-choice','main-field','#06560b','3vh','27vw','100vh','#06560b','0.5vh','1vw','flex','column','nowrap','none');
+choicePanelIns('Category','need','main-field-category','choice-category','main-field-choice','#06560b','1vw','24vw','25vw','#06560b','0.5vh','1vh','flex','column','nowrap','auto');
+choicePanelIns('Brand','need','main-field-brand','choice-brand','main-field-choice','#06560b','1vw','24vw','25vw','#06560b','0.5vh','1vh','flex','column','nowrap','auto');
 choicePanelIns('','dont','main-field-gifts','main-gifts','main-field','#06560b','3vh','100%','','#06560b','0.5vh','2vh','flex','row','wrap','none');
 choicePanelIns('','dont','gifts-top','gifts-serch-rest','main-field-gifts','#06560b','3vh','99.5%','10vh','#06560b','0.5vh','2vh','flex','column','nowrap','none');
 
-listMakers(arrExp, categoryList,serchCategory,'category-list','category-list','main-field-category','#08300a','3vh',4);
-listMakers(arrExp,brandList,serchBrand,'brand-list','brand-list','main-field-brand','#08300a','3vh',29);
+listMakers(arrExp, categoryList,serchCategory,'category-list','category-list','main-field-category','#08300a','2vw',9);
+listMakers(arrExp,brandList,serchBrand,'brand-list','brand-list','main-field-brand','#08300a','2vw',47);
 fillGifts(arrExp,'gift-container','gift-id','main-field-gifts','#08300a','1.8vw','23%','25vw','#06560b','0.5vh','2vh','column','none')
 
 } // asinc function end
