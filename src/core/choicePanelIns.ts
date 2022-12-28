@@ -20,7 +20,10 @@ function choicePanelIns (name:string,nameNeed:string,className:string, id:string
         mainField.style.color = colorName;
         mainField.style.fontSize = fontSize;
         mainField.style.width = width;
+       
         mainField.style.height = height;
+        mainField.style.maxHeight = '100%';
+
         mainField.style.display =display;
         mainField.style.flexWrap = flexWrap;
         mainField.style.flexDirection = flexDir;
@@ -35,6 +38,7 @@ function choicePanelIns (name:string,nameNeed:string,className:string, id:string
         mainField.style.overflowY = overflow;
         mainField.style.padding = 'auto';
         mainField.style.justifyContent = 'space-around';
+
         document.getElementById(bodyInner[0].id)?.insertAdjacentElement('beforeend', mainField);
     }
     
