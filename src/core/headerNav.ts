@@ -9,7 +9,7 @@ function headerNav(className: string, id:string,colorName:string,colBegin:number
       headElemNav.innerText = args[i];
       headElemNav.style.color = colorName;
       console.log('color =>' +headElemNav.style.color);
-      headElemNav.href = '';
+      //headElemNav.href = '';
       headElemNav.style.cssText = `grid-column: ${colBegin+i}/${colBegin+i+1};
                                    grid-row: ${rowBegin}/${rowBegin+1};
                                    font-size: ${fontSize};`;

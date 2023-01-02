@@ -10,7 +10,8 @@ function fillGifts (giftsData:Gifts[],className:string, id:string, inBlockClass:
         //mainField.innerHTML = giftContainerHTML;
         
         mainField.className = `${className}-${i} section-gift`;//==================================
-        mainField.id = `${id}-${i}`;
+        mainField.id = `${id}-${giftsData[i].id}`;
+        //alert(`ID in gift section set ${giftsData[i].id}`);
         mainField.style.color = colorName;
         mainField.style.fontSize = fontSize;
         mainField.style.width = width;
@@ -41,6 +42,12 @@ function fillGifts (giftsData:Gifts[],className:string, id:string, inBlockClass:
 //   ============================= fill gift container =======================================
 
         document.getElementById(bodyInner[0].id)?.insertAdjacentElement('beforeend', mainField);
+        mainField.addEventListener('click',() =>{
+            //gift[i].remove(); //TODO копировать всю секцию в корзину (корзина отдельная секция)
+            alert(`its gift on position  => ${i}  giftsData.id  ${giftsData[i].id}`)
+        });
+
+
         const giftIn:HTMLCollectionOf<Element> = document.getElementsByClassName(`${className}-${i}`);//===
       
         const giftName:HTMLElement = document.createElement('div');
