@@ -7,9 +7,9 @@ function listMakers (arrExp:Gifts[], fromArr:string[],toArr:string[],className:s
         const bodyInner:HTMLCollectionOf<Element> = document.getElementsByClassName(inBlockClass);
         for(let i=0;i<adder;i++){
         const mainFieldFirst:HTMLElement = document.createElement('div');
-        mainFieldFirst.innerHTML = `<p>${i}</p>`
+        mainFieldFirst.innerHTML = `<p style="height:2vw"></p>`
         document.getElementById(bodyInner[0].id)?.insertAdjacentElement('beforeend', mainFieldFirst);
-        }
+        } 
       for (let i = 0; i < fromArr.length; i ++){
         const mainField:HTMLElement = document.createElement('div');  
         mainField.className = className;
@@ -42,21 +42,14 @@ function listMakers (arrExp:Gifts[], fromArr:string[],toArr:string[],className:s
              // TODO clear gifts-container- #gift-id- before ran next fillGifts
              const giftToErase:HTMLCollectionOf<Element> = document.getElementsByClassName('section-gift');
               console.log('gift to erase======================='+giftToErase.length);
-              //console.log(giftToErase);
+              
 
               while(giftToErase.length) {
                 giftToErase[0].remove();
               }
 
-              /*for(let j=0;j<giftToErase.length; j ++){
-                
-                giftToErase[j+1].remove();
-                
-                console.log('============> '+j)
-                console.log(giftToErase[j] );
-
-              }*/
-             fillGiftsInn(arrExp,'gift-container','gift-id','main-field-gifts','#08300a','1.8vw','23%','25vw','#06560b','0.5vh','2vh','column','none')
+             
+             fillGiftsInn(toArr,arrExp,'gift-container','gift-id','main-field-gifts','#08300a','1.8vw','23%','25vw','#06560b','0.5vh','2vh','column','none')
             } else {
               console.log('bbbbbbbbbbbbbbbbbbbb!!!!!!!!!!!!!!!!!=>'+ mainField.innerText+'=>'+toArr.indexOf(fromArr[i]));
               mainField.innerHTML = `<span>${fromArr[i]}</span>`;
@@ -71,7 +64,7 @@ function listMakers (arrExp:Gifts[], fromArr:string[],toArr:string[],className:s
                 giftToErase[0].remove();
               }
               // =================== end of erase ======================
-              fillGiftsInn(arrExp,'gift-container','gift-id','main-field-gifts','#08300a','1.8vw','23%','25vw','#06560b','0.5vh','2vh','column','none')
+              fillGiftsInn(toArr,arrExp,'gift-container','gift-id','main-field-gifts','#08300a','1.8vw','23%','25vw','#06560b','0.5vh','2vh','column','none')
             }
        
         console.log('=======toArr============');
@@ -83,6 +76,11 @@ function listMakers (arrExp:Gifts[], fromArr:string[],toArr:string[],className:s
     })
 
     }
+
+
+    
+
+
     return toArr;
     }
     

@@ -9,7 +9,7 @@ function basketTop (className: string, id:string,colorName:string,colBegin:numbe
           
             headElemCart.style.cssText = `grid-column: ${colBegin+1}/${colBegin+3};
                                          grid-row: ${rowBegin}/${rowBegin+2};
-                                         background-image: url('/dist/images/bascketSign64.png');
+                                         background-image: url('./images/bascketSign64.png');
                                          
                                          background-size:contain;
                                          background-position:top;
