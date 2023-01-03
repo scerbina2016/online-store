@@ -93,15 +93,24 @@ document.addEventListener("DOMContentLoaded", function(event) {
         //qwe[0].innerText = 'red'
       
     })
+    /*let cartContainer:HTMLCollectionOf<Element> = document.getElementsByClassName('cart');
+    cartContainer[0].innerHTML = '<p>aaaaaaaaaaaaaaaaaaaaa</p>';*/
 
-    let gift = document.getElementsByClassName('section-gift');
-    console.log(asd);
+
+    /*let gift = document.getElementById('gift-in-img0');
+    gift?.addEventListener('click',()=>{
+
+        alert(gift?.style.backgroundImage);
+
+
+    })
+    console.log(gift);
     for (let i=0;i<asd.length;i++){
     /*gift[i]?.addEventListener('click',() =>{
         //gift[i].remove(); //TODO копировать всю секцию в корзину (корзина отдельная секция)
         alert(`its gift on position  => ${gift[i].id}`)
-    })*/
-    } 
+    })
+    } */
     
     }
   

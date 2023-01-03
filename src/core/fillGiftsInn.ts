@@ -50,7 +50,14 @@ function fillGiftsInn (arrCheck:string[],giftsData:Gifts[],className:string, id:
         document.getElementById(bodyInner[0].id)?.insertAdjacentElement('beforeend', mainField);
         mainField.addEventListener('click',() =>{
             //gift[i].remove(); //TODO копировать всю секцию в корзину (корзина отдельная секция)
-            alert(`its gift on position  => ${i}  giftsData.id  ${giftsData[i].id}`)
+            alert(`its gift on position !!!!! => ${i}  giftsData.id  ${giftsData[i].id}`)
+            // показать товар в отдельном окне
+            
+
+
+
+
+
         });
 
 
@@ -75,6 +82,7 @@ function fillGiftsInn (arrCheck:string[],giftsData:Gifts[],className:string, id:
         giftIMG.style.backgroundPosition = 'left';
         giftIMG.style.width = '100%';
         giftIMG.style.height = '100%';
+        giftIMG.style.cursor = 'pointer';
         
         document.getElementById(giftIn[0].id)?.insertAdjacentElement('beforeend', giftIMG);
 
@@ -223,6 +231,7 @@ for(let i =0; i<giftsData.length; i++){
             giftIMG.style.backgroundPosition = 'left';
             giftIMG.style.width = '100%';
             giftIMG.style.height = '100%';
+            giftIMG.style.cursor = 'pointer';
             
             document.getElementById(giftIn[0].id)?.insertAdjacentElement('beforeend', giftIMG);
     

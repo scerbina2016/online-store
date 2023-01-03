@@ -5,6 +5,7 @@ function fillGifts (giftsData:Gifts[],className:string, id:string, inBlockClass:
     colorName:string, fontSize: string, width:string, height:string, borderColor:string,
     borderWidth:string, borderRadius:string,flexDir:string, overflow:string):void{
         const bodyInner:HTMLCollectionOf<Element> = document.getElementsByClassName(inBlockClass);
+       
      for(let i =0; i<giftsData.length; i++){   
         const mainField:HTMLElement = document.createElement('section');
         //mainField.innerHTML = giftContainerHTML;
@@ -44,7 +45,75 @@ function fillGifts (giftsData:Gifts[],className:string, id:string, inBlockClass:
         document.getElementById(bodyInner[0].id)?.insertAdjacentElement('beforeend', mainField);
         mainField.addEventListener('click',() =>{
             //gift[i].remove(); //TODO копировать всю секцию в корзину (корзина отдельная секция)
-            alert(`its gift on position  => ${i}  giftsData.id  ${giftsData[i].id}`)
+            
+            const giftCont:HTMLElement = document.createElement('section');
+            giftCont.className = 'gift-view2';
+            giftCont.style.color = colorName;
+            giftCont.style.fontSize = fontSize;
+            giftCont.style.width = '96vw';
+            giftCont.style.height = '90vh';
+            giftCont.style.display ='grid';
+            giftCont.style.gridTemplateColumns = 'repeat(10 10vh)';
+            giftCont.style.gridTemplateRows = 'repeat(10 10vh)';
+            giftCont.style.position ='fixed';
+            giftCont.style.top ='0%';
+            giftCont.style.left = '0%';
+            giftCont.style.zIndex = '3;'
+            giftCont.style.backgroundColor = 'white';
+            giftCont.style.backgroundSize = 'contain';
+            giftCont.style.flexDirection = flexDir;
+            giftCont.style.borderColor = borderColor;
+            giftCont.style.borderWidth = borderWidth;
+            giftCont.style.borderStyle = 'solid';
+            giftCont.style.borderRadius = borderRadius;
+            giftCont.style.marginLeft = '0.5vh';
+            giftCont.style.marginRight = '0.5vh';
+            giftCont.style.marginTop = '0.5vh';
+            giftCont.style.marginBottom = '0.5vh';
+            giftCont.style.overflowY = overflow;
+            giftCont.style.padding = 'auto';
+            //giftCont.style.cursor = 'pointer';
+            giftCont.innerHTML = `  <div class="gift-container-in" id="gift-in-name">${giftsData[i].title}</div>
+                    <div class="gift-cont-img" id="gift-in-img0" style="background-image: url(${giftsData[i].images[0]})"></div>
+                    <div class="gift-cont-img" id="gift-in-img1" style="background-image: url(${giftsData[i].images[1]})"></div>                
+                    <div class="gift-cont-img" id="gift-in-img2" style="background-image: url(${giftsData[i].images[2]})"></div>                
+                    <div class="gift-cont-img" id="gift-in-img3" style="background-image: url(${giftsData[i].images[3]})"></div>                
+                    <div class="gift-cont-img-main" id="gift-in-img-main" style="background-image: url(${giftsData[i].images[0]})"></div>
+
+                                    <div class="gift-container-in" id="gift-in-price"></div>
+                                    <div class="gift-container-in" id="gift-in-description"></div>
+                                    <div class="gift-container-in" id="but-gift-in-add"></div>
+                                    <div class="gift-container-in" id="gift-in-detalis"></div>
+                                    <div class="gift-container-close" id="gift-close"><p>&#9587</p></div>`;
+
+            document.getElementById(bodyInner[0].id)?.insertAdjacentElement('beforeend', giftCont);
+          /*  const img0 = document.getElementsByClassName('gift-in-img0');
+            console.log('img0');console.log(img0);
+            img0[0].style.backgroundImage =`url(${giftsData[i].images[0]})`;;
+            const img1 = document.getElementsByClassName('gift-cont-img1');
+            const img2 = document.getElementsByClassName('gift-cont-img2');
+            const img3 = document.getElementsByClassName('gift-cont-img3');*/
+
+           
+          
+
+
+
+            const ader = document.getElementsByClassName('gift-container-close');
+            ader[0].addEventListener('click',() =>{
+                giftCont.remove();
+            })
+            //alert(`its gift on position !!!!! => ${i}  giftsData.id  ${giftsData[i].id}`)
+
+            // показать товар в отдельном окне
+            
+
+
+
+
+
+
+
         });
 
 
@@ -68,6 +137,7 @@ function fillGifts (giftsData:Gifts[],className:string, id:string, inBlockClass:
         giftIMG.style.backgroundPosition = 'left';
         giftIMG.style.width = '100%';
         giftIMG.style.height = '100%';
+        giftIMG.style.cursor = 'pointer';
         
         document.getElementById(giftIn[0].id)?.insertAdjacentElement('beforeend', giftIMG);
 

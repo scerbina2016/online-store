@@ -1,4 +1,4 @@
-const giftContainerHTML:string =`  <div class="gift-container-in" id="gift-in-name"></div>
+const giftContainerHTML:string =`  <div class="gift-container-in" id="gift-in-name">aaaaaaaaaaaa</div>
                                    <div class="gift-container-in" id="gift-in-img"></div>
                                    <div class="gift-container-in" id="gift-in-price"></div>
                                    <div class="gift-container-in" id="gift-in-description"></div>
