@@ -8,7 +8,7 @@ function cartHead(className: string, id:string,colorName:string,colBegin:number,
         headElemCart.id = id;
         headElemCart.innerText = 'Cart';
         headElemCart.style.color = colorName;
-        console.log('color =>' +headElemCart.style.color);
+       
         headElemCart.href = '';
         headElemCart.style.cssText = `grid-column: ${colBegin}/${colBegin+1};
                                      grid-row: ${rowBegin}/${rowBegin+1};
