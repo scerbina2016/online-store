@@ -33,15 +33,15 @@ function listMakers (arrExp:Gifts[], fromArr:string[],toArr:string[],className:s
        mainField.addEventListener('click',()=>{
         //alert(`add choice  click => ${mainField.id}`);
         
-            console.log(`in if true ${fromArr[i]}+  => toArr[${i}]  ${toArr[i]}`);
+           
             if(toArr.indexOf(fromArr[i])=== -1){
-              console.log('aaaaaaaaaaaaaaaaaaaa!!!!!!!!!!!!!!!!!=>'+ mainField.innerText+'=>'+toArr.indexOf(fromArr[i]));
+             
              toArr.unshift(fromArr[i]);
              mainField.innerHTML = `<span>${mainField.innerText}</span><span class="birds" style = "color:red">&#10004</span>`;
              
              // TODO clear gifts-container- #gift-id- before ran next fillGifts
              const giftToErase:HTMLCollectionOf<Element> = document.getElementsByClassName('section-gift');
-              console.log('gift to erase======================='+giftToErase.length);
+             
               
 
               while(giftToErase.length) {
@@ -67,8 +67,6 @@ function listMakers (arrExp:Gifts[], fromArr:string[],toArr:string[],className:s
               fillGiftsInn(toArr,arrExp,'gift-container','gift-id','main-field-gifts','#08300a','1.8vw','23%','25vw','#06560b','0.5vh','2vh','column','none')
             }
        
-        console.log('=======toArr============');
-        console.log(toArr);
         
       
     

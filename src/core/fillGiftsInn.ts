@@ -1,6 +1,7 @@
 import giftContainerHTML from "../components/modules/giftContainerHTML";
 import Gifts from "../components/modules/interfaces";
 import addToCart from "./addToCart";
+import giftVievWin from "../components/modules/giftVievWin";
 function fillGiftsInn (arrCheck:string[],giftsData:Gifts[],className:string, id:string, inBlockClass:string,
     colorName:string, fontSize: string, width:string, height:string, borderColor:string,
     borderWidth:string, borderRadius:string,flexDir:string, overflow:string):void{
@@ -47,21 +48,175 @@ function fillGiftsInn (arrCheck:string[],giftsData:Gifts[],className:string, id:
 
 //   ============================= fill gift container =======================================
 
-        document.getElementById(bodyInner[0].id)?.insertAdjacentElement('beforeend', mainField);
-        mainField.addEventListener('click',() =>{
-            //gift[i].remove(); //TODO копировать всю секцию в корзину (корзина отдельная секция)
-            alert(`its gift on position !!!!! => ${i}  giftsData.id  ${giftsData[i].id}`)
-            // показать товар в отдельном окне
-            
+document.getElementById(bodyInner[0].id)?.insertAdjacentElement('beforeend', mainField);
+mainField.addEventListener('click',() =>{
+    //gift[i].remove(); //TODO копировать всю секцию в корзину (корзина отдельная секция)
+    
+    const giftCont:HTMLElement = document.createElement('section');
+    giftCont.className = 'gift-view2';
+    giftCont.style.color = colorName;
+    giftCont.style.fontSize = fontSize;
+    giftCont.style.width = '96vw';
+    giftCont.style.height = '90vh';
+    giftCont.style.display ='grid';
+    giftCont.style.gridTemplateColumns = 'repeat(10 10vh)';
+    giftCont.style.gridTemplateRows = 'repeat(10 10vh)';
+    giftCont.style.position ='fixed';
+    giftCont.style.top ='0%';
+    giftCont.style.left = '0%';
+    giftCont.style.zIndex = '3;'
+    giftCont.style.backgroundColor = 'white';
+    giftCont.style.backgroundSize = 'contain';
+    giftCont.style.flexDirection = flexDir;
+    giftCont.style.borderColor = borderColor;
+    giftCont.style.borderWidth = borderWidth;
+    giftCont.style.borderStyle = 'solid';
+    giftCont.style.borderRadius = borderRadius;
+    giftCont.style.marginLeft = '0.5vh';
+    giftCont.style.marginRight = '0.5vh';
+    giftCont.style.marginTop = '0.5vh';
+    giftCont.style.marginBottom = '0.5vh';
+    giftCont.style.overflowY = overflow;
+    giftCont.style.padding = 'auto';
+    //giftCont.style.cursor = 'pointer';
+    giftCont.innerHTML = `  <div class="gift-container-in" id="gift-in-name">${giftsData[i].title}</div>
+            <div class="gift-cont-img" id="gift-in-img0" style="background-image: url(${giftsData[i].images[0]})"></div>
+            <div class="gift-cont-img" id="gift-in-img1" style="background-image: url(${giftsData[i].images[1]})"></div>                
+            <div class="gift-cont-img" id="gift-in-img2" style="background-image: url(${giftsData[i].images[2]})"></div>                
+            <div class="gift-cont-img" id="gift-in-img3" style="background-image: url(${giftsData[i].images[3]})"></div>                
+            <div class="gift-cont-img-main" id="gift-in-img-main" style="background-image: url(${giftsData[i].images[2]})"></div>
+
+            <div class="gift-container-in" id="gift-in-price">${String.fromCharCode(8364)} ${giftsData[i].price}</div>
+            <div class="gift-container-in" id="gift-in-description">${giftsData[i].description}</div>
+            <div class="gift-container-in" id="gift-in-discount">Discount:-${giftsData[i].discountPercentage}%</div>
+            <div class="gift-container-in" id="gift-in-brand">${giftsData[i].brand}</div>
+                            
+                            
+            <div class="gift-container-in" id="but-gift-in-add"></div>
+            <div class="gift-container-in" id="gift-in-detalis"></div>
+
+
+
+            <div class="gift-container-close" id="gift-close"><p>&#9587</p></div>`;
+
+    document.getElementById(bodyInner[0].id)?.insertAdjacentElement('beforeend', giftCont);
+    const img0:HTMLCollectionOf<Element> = giftCont.getElementsByClassName('gift-cont-img');
+    //=========================================
+    img0[0].addEventListener('click',()=>{
+        giftCont.innerHTML = `  <div class="gift-container-in" id="gift-in-name">${giftsData[i].title}</div>
+        <div class="gift-cont-img" id="gift-in-img0" style="background-image: url(${giftsData[i].images[0]})"></div>
+        <div class="gift-cont-img" id="gift-in-img1" style="background-image: url(${giftsData[i].images[1]})"></div>                
+        <div class="gift-cont-img" id="gift-in-img2" style="background-image: url(${giftsData[i].images[2]})"></div>                
+        <div class="gift-cont-img" id="gift-in-img3" style="background-image: url(${giftsData[i].images[3]})"></div>                
+        <div class="gift-cont-img-main" id="gift-in-img-main" style="background-image: url(${giftsData[i].images[0]})"></div>
+
+        <div class="gift-container-in" id="gift-in-price">${String.fromCharCode(8364)} ${giftsData[i].price}</div>
+        <div class="gift-container-in" id="gift-in-description">${giftsData[i].description}</div>
+        <div class="gift-container-in" id="gift-in-discount">Discount:-${giftsData[i].discountPercentage}%</div>
+        <div class="gift-container-in" id="gift-in-brand">${giftsData[i].brand}</div>
+                        
+                        
+        <div class="gift-container-in" id="but-gift-in-add"></div>
+        <div class="gift-container-in" id="gift-in-detalis"></div>
+
+
+
+        <div class="gift-container-close" id="gift-close"><p>&#9587</p></div>`;
+            let ader0 = document.getElementsByClassName('gift-container-close');
+    ader0[0].addEventListener('click',() =>{
+        giftCont.remove();
+    })
+    
+    })
+//=================================================================           
+    img0[1].addEventListener('click',()=>{
+        giftCont.innerHTML = `  <div class="gift-container-in" id="gift-in-name">${giftsData[i].title}</div>
+        <div class="gift-cont-img" id="gift-in-img0" style="background-image: url(${giftsData[i].images[0]})"></div>
+        <div class="gift-cont-img" id="gift-in-img1" style="background-image: url(${giftsData[i].images[1]})"></div>                
+        <div class="gift-cont-img" id="gift-in-img2" style="background-image: url(${giftsData[i].images[2]})"></div>                
+        <div class="gift-cont-img" id="gift-in-img3" style="background-image: url(${giftsData[i].images[3]})"></div>                
+        <div class="gift-cont-img-main" id="gift-in-img-main" style="background-image: url(${giftsData[i].images[1]})"></div>
+
+        <div class="gift-container-in" id="gift-in-price">${String.fromCharCode(8364)} ${giftsData[i].price}</div>
+        <div class="gift-container-in" id="gift-in-description">${giftsData[i].description}</div>
+        <div class="gift-container-in" id="gift-in-discount">Discount:-${giftsData[i].discountPercentage}%</div>
+        <div class="gift-container-in" id="gift-in-brand">${giftsData[i].brand}</div>
+                        
+                        
+        <div class="gift-container-in" id="but-gift-in-add"></div>
+        <div class="gift-container-in" id="gift-in-detalis"></div>
+
+
+
+        <div class="gift-container-close" id="gift-close"><p>&#9587</p></div>`;
+const ader1 = document.getElementsByClassName('gift-container-close');
+ader1[0].addEventListener('click',() =>{
+giftCont.remove();
+})
+    })
+
+    img0[2].addEventListener('click',()=>{
+        giftCont.innerHTML = giftVievWin(giftsData[i].title,
+            giftsData[i].images[0],
+            giftsData[i].images[1],
+            giftsData[i].images[2],
+            giftsData[i].images[3], 
+            giftsData[i].images[2],
+            giftsData[i].price,
+            giftsData[i].description,
+            giftsData[i].discountPercentage,
+            giftsData[i].brand) 
+console.log(giftCont.innerHTML);
+const ader2 = document.getElementsByClassName('gift-container-close');
+ader2[0].addEventListener('click',() =>{
+giftCont.remove();
+})
+    })
+
+    img0[3].addEventListener('click',()=>{
+        giftCont.innerHTML = giftVievWin(giftsData[i].title,
+            giftsData[i].images[0],
+            giftsData[i].images[1],
+            giftsData[i].images[2],
+            giftsData[i].images[3], 
+            giftsData[i].images[3],
+            giftsData[i].price,
+            giftsData[i].description,
+            giftsData[i].discountPercentage,
+            giftsData[i].brand) 
+console.log(giftCont.innerHTML);
+const ader3 = document.getElementsByClassName('gift-container-close');
+ader3[0].addEventListener('click',() =>{
+giftCont.remove();
+})
+    })
+
+
+
+    
+   
+  
+
+
+
+    const ader = document.getElementsByClassName('gift-container-close');
+    ader[0].addEventListener('click',() =>{
+        giftCont.remove();
+    })
+    //alert(`its gift on position !!!!! => ${i}  giftsData.id  ${giftsData[i].id}`)
+
+    // показать товар в отдельном окне
+    
 
 
 
 
 
-        });
 
 
+});
 
+//==============================================================================================================
         const giftIn:HTMLCollectionOf<Element> = document.getElementsByClassName(`${className}-${i}`);//===
       
         const giftName:HTMLElement = document.createElement('div');
@@ -114,7 +269,7 @@ function fillGiftsInn (arrCheck:string[],giftsData:Gifts[],className:string, id:
        giftInCart.style.cursor = 'pointer'; 
       // ================== listener for add to cart ==================== 
         giftInCart.addEventListener('click',()=>{
-            alert(`add to cart button click => ${giftInCart.id}`);
+            alert(`И фсё!!!`);
 
         })
         // =================== end of listener for add to cart ====================
@@ -146,8 +301,7 @@ function fillGiftsInn (arrCheck:string[],giftsData:Gifts[],className:string, id:
        giftInDetalis.style.cursor = 'pointer'; 
       // ================== listener for detalis ==================== 
         giftInDetalis.addEventListener('click',()=>{
-            alert(`DETALIS button click => ${giftInDetalis.id}`);
-
+        
         })
         // =================== end of listener for detalis ====================
         document.getElementById(giftIn[0].id)?.insertAdjacentElement('beforeend', giftInDetalis);
@@ -202,15 +356,176 @@ for(let i =0; i<giftsData.length; i++){
             console.log(giftsData[0].title);*/
     
     //   ============================= fill gift container =======================================
-    
-            document.getElementById(bodyInner[0].id)?.insertAdjacentElement('beforeend', mainField);4
-            mainField.addEventListener('click',() =>{
-                //gift[i].remove(); //TODO копировать всю секцию в корзину (корзина отдельная секция)
-                alert(`its gift on position  => ${i}  giftsData.id  ${giftsData[i].id}`)
-            });
+
+    document.getElementById(bodyInner[0].id)?.insertAdjacentElement('beforeend', mainField);
+    mainField.addEventListener('click',() =>{
+        //gift[i].remove(); //TODO копировать всю секцию в корзину (корзина отдельная секция)
+        
+        const giftCont:HTMLElement = document.createElement('section');
+        giftCont.className = 'gift-view2';
+        giftCont.style.color = colorName;
+        giftCont.style.fontSize = fontSize;
+        giftCont.style.width = '96vw';
+        giftCont.style.height = '90vh';
+        giftCont.style.display ='grid';
+        giftCont.style.gridTemplateColumns = 'repeat(10 10vh)';
+        giftCont.style.gridTemplateRows = 'repeat(10 10vh)';
+        giftCont.style.position ='fixed';
+        giftCont.style.top ='0%';
+        giftCont.style.left = '0%';
+        giftCont.style.zIndex = '3;'
+        giftCont.style.backgroundColor = 'white';
+        giftCont.style.backgroundSize = 'contain';
+        giftCont.style.flexDirection = flexDir;
+        giftCont.style.borderColor = borderColor;
+        giftCont.style.borderWidth = borderWidth;
+        giftCont.style.borderStyle = 'solid';
+        giftCont.style.borderRadius = borderRadius;
+        giftCont.style.marginLeft = '0.5vh';
+        giftCont.style.marginRight = '0.5vh';
+        giftCont.style.marginTop = '0.5vh';
+        giftCont.style.marginBottom = '0.5vh';
+        giftCont.style.overflowY = overflow;
+        giftCont.style.padding = 'auto';
+        //giftCont.style.cursor = 'pointer';
+        giftCont.innerHTML = `  <div class="gift-container-in" id="gift-in-name">${giftsData[i].title}</div>
+                <div class="gift-cont-img" id="gift-in-img0" style="background-image: url(${giftsData[i].images[0]})"></div>
+                <div class="gift-cont-img" id="gift-in-img1" style="background-image: url(${giftsData[i].images[1]})"></div>                
+                <div class="gift-cont-img" id="gift-in-img2" style="background-image: url(${giftsData[i].images[2]})"></div>                
+                <div class="gift-cont-img" id="gift-in-img3" style="background-image: url(${giftsData[i].images[3]})"></div>                
+                <div class="gift-cont-img-main" id="gift-in-img-main" style="background-image: url(${giftsData[i].images[2]})"></div>
+
+                <div class="gift-container-in" id="gift-in-price">${String.fromCharCode(8364)} ${giftsData[i].price}</div>
+                <div class="gift-container-in" id="gift-in-description">${giftsData[i].description}</div>
+                <div class="gift-container-in" id="gift-in-discount">Discount:-${giftsData[i].discountPercentage}%</div>
+                <div class="gift-container-in" id="gift-in-brand">${giftsData[i].brand}</div>
+                                
+                                
+                <div class="gift-container-in" id="but-gift-in-add"></div>
+                <div class="gift-container-in" id="gift-in-detalis"></div>
 
 
 
+                <div class="gift-container-close" id="gift-close"><p>&#9587</p></div>`;
+
+        document.getElementById(bodyInner[0].id)?.insertAdjacentElement('beforeend', giftCont);
+        const img0:HTMLCollectionOf<Element> = giftCont.getElementsByClassName('gift-cont-img');
+        //=========================================
+        img0[0].addEventListener('click',()=>{
+            giftCont.innerHTML = `  <div class="gift-container-in" id="gift-in-name">${giftsData[i].title}</div>
+            <div class="gift-cont-img" id="gift-in-img0" style="background-image: url(${giftsData[i].images[0]})"></div>
+            <div class="gift-cont-img" id="gift-in-img1" style="background-image: url(${giftsData[i].images[1]})"></div>                
+            <div class="gift-cont-img" id="gift-in-img2" style="background-image: url(${giftsData[i].images[2]})"></div>                
+            <div class="gift-cont-img" id="gift-in-img3" style="background-image: url(${giftsData[i].images[3]})"></div>                
+            <div class="gift-cont-img-main" id="gift-in-img-main" style="background-image: url(${giftsData[i].images[0]})"></div>
+
+            <div class="gift-container-in" id="gift-in-price">${String.fromCharCode(8364)} ${giftsData[i].price}</div>
+            <div class="gift-container-in" id="gift-in-description">${giftsData[i].description}</div>
+            <div class="gift-container-in" id="gift-in-discount">Discount:-${giftsData[i].discountPercentage}%</div>
+            <div class="gift-container-in" id="gift-in-brand">${giftsData[i].brand}</div>
+                            
+                            
+            <div class="gift-container-in" id="but-gift-in-add"></div>
+            <div class="gift-container-in" id="gift-in-detalis"></div>
+
+
+
+            <div class="gift-container-close" id="gift-close"><p>&#9587</p></div>`;
+                let ader0 = document.getElementsByClassName('gift-container-close');
+        ader0[0].addEventListener('click',() =>{
+            giftCont.remove();
+        })
+        
+        })
+//=================================================================           
+        img0[1].addEventListener('click',()=>{
+            giftCont.innerHTML = `  <div class="gift-container-in" id="gift-in-name">${giftsData[i].title}</div>
+            <div class="gift-cont-img" id="gift-in-img0" style="background-image: url(${giftsData[i].images[0]})"></div>
+            <div class="gift-cont-img" id="gift-in-img1" style="background-image: url(${giftsData[i].images[1]})"></div>                
+            <div class="gift-cont-img" id="gift-in-img2" style="background-image: url(${giftsData[i].images[2]})"></div>                
+            <div class="gift-cont-img" id="gift-in-img3" style="background-image: url(${giftsData[i].images[3]})"></div>                
+            <div class="gift-cont-img-main" id="gift-in-img-main" style="background-image: url(${giftsData[i].images[1]})"></div>
+
+            <div class="gift-container-in" id="gift-in-price">${String.fromCharCode(8364)} ${giftsData[i].price}</div>
+            <div class="gift-container-in" id="gift-in-description">${giftsData[i].description}</div>
+            <div class="gift-container-in" id="gift-in-discount">Discount:-${giftsData[i].discountPercentage}%</div>
+            <div class="gift-container-in" id="gift-in-brand">${giftsData[i].brand}</div>
+                            
+                            
+            <div class="gift-container-in" id="but-gift-in-add"></div>
+            <div class="gift-container-in" id="gift-in-detalis"></div>
+
+
+
+            <div class="gift-container-close" id="gift-close"><p>&#9587</p></div>`;
+const ader1 = document.getElementsByClassName('gift-container-close');
+ader1[0].addEventListener('click',() =>{
+giftCont.remove();
+})
+        })
+
+        img0[2].addEventListener('click',()=>{
+            giftCont.innerHTML = giftVievWin(giftsData[i].title,
+                giftsData[i].images[0],
+                giftsData[i].images[1],
+                giftsData[i].images[2],
+                giftsData[i].images[3], 
+                giftsData[i].images[2],
+                giftsData[i].price,
+                giftsData[i].description,
+                giftsData[i].discountPercentage,
+                giftsData[i].brand) 
+console.log(giftCont.innerHTML);
+const ader2 = document.getElementsByClassName('gift-container-close');
+ader2[0].addEventListener('click',() =>{
+giftCont.remove();
+})
+        })
+
+        img0[3].addEventListener('click',()=>{
+            giftCont.innerHTML = giftVievWin(giftsData[i].title,
+                giftsData[i].images[0],
+                giftsData[i].images[1],
+                giftsData[i].images[2],
+                giftsData[i].images[3], 
+                giftsData[i].images[3],
+                giftsData[i].price,
+                giftsData[i].description,
+                giftsData[i].discountPercentage,
+                giftsData[i].brand) 
+console.log(giftCont.innerHTML);
+const ader3 = document.getElementsByClassName('gift-container-close');
+ader3[0].addEventListener('click',() =>{
+giftCont.remove();
+})
+        })
+
+
+
+        
+       
+      
+
+
+
+        const ader = document.getElementsByClassName('gift-container-close');
+        ader[0].addEventListener('click',() =>{
+            giftCont.remove();
+        })
+        //alert(`its gift on position !!!!! => ${i}  giftsData.id  ${giftsData[i].id}`)
+
+        // показать товар в отдельном окне
+        
+
+
+
+
+
+
+
+    });
+
+//==============================================================================================================
             const giftIn:HTMLCollectionOf<Element> = document.getElementsByClassName(`${className}-${i}`);//===
           
             const giftName:HTMLElement = document.createElement('div');
@@ -263,7 +578,7 @@ for(let i =0; i<giftsData.length; i++){
            giftInCart.style.cursor = 'pointer'; 
           // ================== listener for add to cart ==================== 
             giftInCart.addEventListener('click',()=>{
-                alert(`add to cart button click => ${giftInCart.id}`);
+            alert('И фсё!!!')
     
             })
             // =================== end of listener for add to cart ====================
@@ -295,7 +610,7 @@ for(let i =0; i<giftsData.length; i++){
            giftInDetalis.style.cursor = 'pointer'; 
           // ================== listener for detalis ==================== 
             giftInDetalis.addEventListener('click',()=>{
-                alert(`DETALIS button click => ${giftInDetalis.id}`);
+             
     
             })
             // =================== end of listener for detalis ====================
@@ -323,9 +638,4 @@ for(let i =0; i<giftsData.length; i++){
     
     export default fillGiftsInn;
 
-   let a = `  <div class="gift-container-in" id="gift-in-name"></div>
-                                   <div class="gift-container-in" id="gift-in-img"></div>
-                                   <div class="gift-container-in" id="gift-in-price"></div>
-                                   <div class="gift-container-in" id="gift-in-description"></div>
-                                   <div class="gift-container-in" id="but-gift-in-add"></div>
-                                   <div class="gift-container-in" id="gift-in-detalis"></div>`;
+   

@@ -71,13 +71,11 @@ giftFieldCheking(arrExp,categoryList,brandList,serchCategory,serchBrand);
 
 } // asinc function end
 
-document.addEventListener("DOMContentLoaded", function(event) {
-    console.log("DOM fully loaded and parsed");
-});
 
 
 
-  start().then( // с уещпщ ьусеф иидно весь Dom
+  start()
+  /*.then( // с уещпщ ьусеф иидно весь Dom
     response =>{
     let asd = document.getElementsByClassName('category-list');
         console.log(asd);
@@ -110,10 +108,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
         //gift[i].remove(); //TODO копировать всю секцию в корзину (корзина отдельная секция)
         alert(`its gift on position  => ${gift[i].id}`)
     })
-    } */
+    } 
     
     }
   
 
-  );// all begin !!!!!!!!!!!!!!!!!!!
+  );// all begin !!!!!!!!!!!!!!!!!!!*/
 
